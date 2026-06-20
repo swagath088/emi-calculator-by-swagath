@@ -1,0 +1,307 @@
+/* --- Global Resets --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Absolute Centering Layer (Fixes the laptop alignment issue) --- */
+html, body, #root, .App {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Forces horizontal centering on laptops */
+  align-items: center;     /* Forces vertical centering on laptops */
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+/* --- The Calculator Card (App Shell) --- */
+.container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px; /* Standard sleek mobile app width on laptops */
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.4s ease-out;
+  
+  /* Hard reset case backup to absolutely guarantee center placement */
+  margin: 0 auto; 
+}
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --input-border: #cbd5e1;
+  --result-bg: #f0fdf4;
+  --result-border: #bbf7d0;
+  --result-text: #166534;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-gradient);
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+.container {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 420px; /* Perfect smartphone silhouette on large screens */
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Typography --- */
+h1 {
+  color: var(--text-main);
+  font-size: 1.65rem;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+/* --- Inputs & Labels --- */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--input-border);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  outline: none;
+  background: #f8fafc;
+  transition: all 0.25s ease;
+}
+
+input[type="number"]:focus {
+  border-color: var(--primary-color);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+/* --- App Action Buttons --- */
+.button-group {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+button {
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.btn-calculate {
+  background: var(--primary-color);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-calculate:hover {
+  background: var(--primary-hover);
+}
+
+.btn-reset {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.btn-reset:hover {
+  background: #e2e8f0;
+}
+
+/* --- Mobile App-Style Results Panel --- */
+.result {
+  background: var(--result-bg);
+  border: 1px solid var(--result-border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.result h3 {
+  color: var(--result-text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 1px dashed rgba(22, 101, 52, 0.2);
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result h3 span {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.result-row span {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* --- Footer Elements --- */
+.footer {
+  margin-top: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer strong {
+  color: var(--text-main);
+}
+
+.footer .email {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-hero {
+  width: 100%;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 0.85rem;
+  border-radius: 10px;
+}
+
+.btn-hero:hover {
+  background: #1e293b;
+}
+
+
+@media (max-width: 360px) {
+  .container {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .button-group {
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+    background: #ffffff;
+  }
+
+  .container {
+    box-shadow: none; 
+    border-radius: 0;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    justify-content: center; 
+  }
+}
