@@ -1,33 +1,63 @@
-# Smart EMI Calculator 💰
+# 💰 Smart EMI Calculator
 
-A simple and responsive EMI Calculator built using React.js.
+A simple, responsive, and user-friendly EMI Calculator built using **React.js** and **Vite**.
 
-## Features
+## 🚀 Live Demo
 
-- Calculate Monthly EMI
-- Calculate Total Interest
-- Calculate Total Payment
-- Input Validation
-- Reset Functionality
-- Responsive Design
-- Mobile & Desktop Friendly
+🔗 https://emi-calculator-by-swagath.vercel.app/
 
-## Technologies Used
+---
+
+## 📌 Features
+
+- ✅ Calculate Monthly EMI
+- ✅ Calculate Total Interest
+- ✅ Calculate Total Payment
+- ✅ Instant Results
+- ✅ Input Validation
+- ✅ Reset Functionality
+- ✅ Responsive Design
+- ✅ Mobile & Desktop Friendly
+
+---
+
+## 🛠️ Technologies Used
 
 - React.js
-- JavaScript
+- JavaScript (ES6+)
 - CSS3
 - Vite
 
+---
 
+## 📷 Preview
 
-## Developed By
+![Smart EMI Calculator](./preview.png)
 
-Gaddam Swagath
+---
 
-Email: sswagath46@gmail.com
+## 👨‍💻 Developed By
 
-## Special Requirement
+**Gaddam Swagath**
+
+📧 Email: sswagath46@gmail.com
+
+🌐 Portfolio: https://portfolio-olive-one-e9wfg0chro.vercel.app/
+
+💻 GitHub: https://github.com/swagath088
+
+🔗 LinkedIn: https://www.linkedin.com/in/gaddam-swagath/
+
+---
+
+## 📂 Repository
+
+https://github.com/swagath088/emi-calculator-by-swagath
+
+---
+
+## ⭐ Special Requirement
 
 Built for Digital Heroes
+
 https://digitalheroesco.com
